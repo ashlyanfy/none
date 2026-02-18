@@ -3,7 +3,7 @@ interface Props { onTap: () => void; }
 export default function HelperGirl({ onTap }: Props) {
   return (
     <div onClick={onTap} style={{
-      position:'absolute', right:vw(5), top:s(960),
+      position:'absolute', right:vw(10), top:s(760),
       width:s(400), height:s(590), zIndex:25, cursor:'pointer',
       display:'flex', alignItems:'center', justifyContent:'center',
     }}>

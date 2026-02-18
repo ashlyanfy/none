@@ -46,7 +46,7 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
               style={{ width:'100%', height:'100%', objectFit:'contain' }} />
           </div>
           <span style={{
-            fontSize:s(22), fontWeight:700, color:'#5D4037', fontFamily:'Nunito',
+            fontSize:s(35), fontWeight:900, color:'#48322a', fontFamily:'Nunito',
             textAlign:'center', lineHeight:1.2,
           }}>{LABELS[tab]}</span>
         </div>

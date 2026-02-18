@@ -21,7 +21,7 @@ export default function NutrientsBadge({ onTap }: Props) {
         }}>{nutrients}</span>
       </div>
       <span style={{
-        fontSize:s(22), fontWeight:700, color:'#5D4037', fontFamily:'Nunito',
+        fontSize:s(35), fontWeight:900, color:'#372620', fontFamily:'Nunito',
         textAlign:'center', lineHeight:1.2,
       }}>Питательные<br/>вещества</span>
     </div>

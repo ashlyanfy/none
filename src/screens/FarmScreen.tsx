@@ -8,7 +8,7 @@ import { getGroundY } from '../utils/scale';
 
 const CFG = {
   carrot: { bg:'/assets/backgrounds/bg_farm_carrot_day.png', ground:'/assets/grounds/ground_farm_soil_patch.png', gx:144, label:'Это морковь', anchorOffsetY:0 },
-  apple:  { bg:'/assets/backgrounds/bg_farm_apple_orchard_day.png', ground:'/assets/grounds/ground_orchard_soil_patch.png', gx:151, label:'Это яблоня', anchorOffsetY:1200 },
+  apple:  { bg:'/assets/backgrounds/bg_farm_apple_orchard_day.png', ground:'/assets/grounds/ground_orchard_soil_patch.png', gx:151, label:'Это яблоня', anchorOffsetY:400 },
 };
 
 export default function FarmScreen() {

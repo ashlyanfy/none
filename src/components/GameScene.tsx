@@ -73,7 +73,7 @@ export default function GameScene({ config, data, actions }: Props) {
       {/* L1 Ground 768×384 */}
       <img src={groundSrc} alt="" style={{ position:'absolute',left:s(groundX),top:groundY,width:s(768),height:s(384),objectFit:'contain',zIndex:10 }}/>
       {/* L2 Object */}
-      <GrowObject type={objectType} artAsset={prog.artAsset} soilAnchorX={groundX + 384} soilAnchorY={groundY + s(384) + groundAnchorOffsetY} />
+      <GrowObject type={objectType} artAsset={prog.artAsset} soilAnchorX={s(groundX + 384)} soilAnchorY={groundY + s(384) + s(groundAnchorOffsetY)} />
       {/* L2b Girl */}
       <HelperGirl onTap={handleGirl}/>
       {/* L3 FX */}

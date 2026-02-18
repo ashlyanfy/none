@@ -3,7 +3,7 @@ import { s } from '../utils/scale';
 type FXType = 'water'|'bubbles'|'pollen'|'sparkle'|'glow'|'none';
 interface Props { stageFX:FXType; triggerFX:FXType; onTriggerDone?:()=>void; soilAnchorX?:number; soilAnchorY?:number; }
 const ASSETS:Record<string,string>={water:'/assets/fx/fx_water_drops.png',bubbles:'/assets/fx/fx_bubbles.png',pollen:'/assets/fx/fx_pollen.png',sparkle:'/assets/fx/fx_sparkle.png',glow:'/assets/fx/fx_glow_ring.png'};
-export default function FXLayer({ stageFX, triggerFX, onTriggerDone, soilAnchorX=540, soilAnchorY=1700 }: Props) {
+export default function FXLayer({ stageFX, triggerFX, onTriggerDone, soilAnchorX=540, soilAnchorY=1550 }: Props) {
   const [show, setShow] = useState(false);
   useEffect(() => { if(triggerFX!=='none'){setShow(true);const t=setTimeout(()=>{setShow(false);onTriggerDone?.()},800);return()=>clearTimeout(t)} }, [triggerFX]);
   const sz=300, cx=soilAnchorX-sz/2, cy=soilAnchorY-sz-80;

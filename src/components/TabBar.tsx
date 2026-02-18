@@ -20,7 +20,6 @@ export default function TabBar({ activeTab, onTabChange }: Props) {
           <button key={tab.id} onClick={() => onTabChange(tab.id)} style={{
             background: 'none', border: 'none', cursor: 'pointer', padding: 0,
             display: 'flex', flexDirection: 'column', alignItems: 'center', gap: s(4),
-            opacity: a ? 1 : 0.55, transform: a ? 'scale(1.1)' : 'scale(1)',
             transition: 'all 0.2s ease', flex: 1, maxWidth: s(200),
           }}>
             <img src={tab.icon} alt={tab.label} style={{
@@ -28,9 +27,9 @@ export default function TabBar({ activeTab, onTabChange }: Props) {
               filter: a ? 'drop-shadow(0 0 8px rgba(255,255,255,0.9))' : 'none',
             }} />
             <span style={{
-              fontSize: s(30), fontWeight: 800,
-              color: a ? '#ffffff' : 'rgba(255,255,255,0.6)',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.6)',
+              fontSize: s(35), fontWeight: 900,
+              color: a ? '#432311' : 'rgba(91, 36, 0, 0.6)',
+              textShadow: '1px 1px 2px rgba(87, 26, 6, 0.6)',
               fontFamily: 'Nunito, sans-serif',
             }}>{tab.label}</span>
           </button>

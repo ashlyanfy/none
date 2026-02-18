@@ -17,33 +17,24 @@ const SCREENS: Record<TabId, React.ReactNode> = {
 
 export default function App() {
   const [tab, setTab] = useState<TabId>('farm');
-  const [vh, setVh] = useState(window.innerHeight);
+  const [, forceUpdate] = useState(0);
 
   useEffect(() => {
-    const onResize = () => setVh(window.innerHeight);
+    const onResize = () => forceUpdate(n => n + 1);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
   return (
-    // Outer: full screen, dark surround, horizontally centered
     <div style={{
       width: '100%',
-      height: `${vh}px`,
+      height: '100dvh',
       backgroundColor: '#1a1a2e',
       display: 'flex',
       justifyContent: 'center',
+      alignItems: 'flex-start',
       overflow: 'hidden',
     }}>
-      {/*
-        Game container — max 540 px wide.
-        All UI elements inside use s() from scale.ts which computes:
-          s(value) = value * (window.innerWidth / 1080)
-        This acts as a single global scale: every size and coordinate is
-        authored in 1080-px design space and multiplied by the same factor.
-        Safe-area (top ≥ 160 design-px, bottom ≥ 244 design-px) is enforced
-        by getSafeArea() and consumed in the ActionDock / HUD components.
-      */}
       <div style={{
         width: '100%',
         maxWidth: '540px',
