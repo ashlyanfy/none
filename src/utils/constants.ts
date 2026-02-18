@@ -1,3 +1,8 @@
+/** Format a number with thousands separator (space). e.g. 1000 → "1 000" */
+export function fmt(n: number): string {
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
+
 export const CYCLE_DAYS = { carrot: 75, apple: 180, trout: 120, bee: 30 } as const;
 export const CARE_COST = { water_g: 125, oxygen_g: 125, syrup_g: 125 } as const;
 export const CARE_BOOST = { step: 0.01, max: 0.15 } as const;

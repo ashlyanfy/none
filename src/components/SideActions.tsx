@@ -15,33 +15,24 @@ const RIGHT = [
 
 interface Props { onCultureSwitch?: () => void; activeCulture?: 'carrot' | 'apple'; }
 
+// Shared circle button style — only size varies between left and right buttons.
+function circleStyle(size: number): React.CSSProperties {
+  return {
+    width: s(size), height: s(size), borderRadius: s(size / 2),
+    background: 'rgba(255,255,255,0.94)',
+    boxShadow: `0 ${s(3)}px ${s(10)}px rgba(0,0,0,0.15)`,
+    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+  };
+}
+
+const labelStyle: React.CSSProperties = {
+  fontSize: s(22), fontWeight: 800, color: '#3E2723',
+  fontFamily: 'Nunito', textAlign: 'center',
+  textShadow: '0 1px 3px rgba(255,255,255,0.9)',
+  lineHeight: 1.1, maxWidth: s(140),
+};
+
 export default function SideActions({ onCultureSwitch, activeCulture }: Props) {
-  const circleSize = 118;
-  const iconSize = 102;
-  const rCircleSize = 136;
-  const rIconSize = 118;
-
-  const circle: React.CSSProperties = {
-    width: s(circleSize), height: s(circleSize), borderRadius: s(circleSize / 2),
-    background: 'rgba(255,255,255,0.94)',
-    boxShadow: `0 ${s(3)}px ${s(10)}px rgba(0,0,0,0.15)`,
-    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-  };
-
-  const rCircle: React.CSSProperties = {
-    width: s(rCircleSize), height: s(rCircleSize), borderRadius: s(rCircleSize / 2),
-    background: 'rgba(255,255,255,0.94)',
-    boxShadow: `0 ${s(3)}px ${s(10)}px rgba(0,0,0,0.15)`,
-    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-  };
-
-  const labelStyle: React.CSSProperties = {
-    fontSize: s(22), fontWeight: 800, color: '#3E2723',
-    fontFamily: 'Nunito', textAlign: 'center',
-    textShadow: '0 1px 3px rgba(255,255,255,0.9)',
-    lineHeight: 1.1, maxWidth: s(140),
-  };
-
   return (
     <div style={{ position:'absolute',top:0,left:0,width:'100%',height:'100%',zIndex:70,pointerEvents:'none' }}>
       {LEFT.map((btn, i) => (
@@ -50,8 +41,8 @@ export default function SideActions({ onCultureSwitch, activeCulture }: Props) {
           display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
           pointerEvents:'auto',
         }}>
-          <div style={circle}>
-            <img src={btn.icon} alt="" style={{ width:s(iconSize),height:s(iconSize),objectFit:'contain' }} />
+          <div style={circleStyle(118)}>
+            <img src={btn.icon} alt="" style={{ width:s(102),height:s(102),objectFit:'contain' }} />
           </div>
           <span style={labelStyle}>{btn.label}</span>
         </div>
@@ -61,19 +52,23 @@ export default function SideActions({ onCultureSwitch, activeCulture }: Props) {
         <div key={i} style={{
           position:'absolute', right:vw(2), top:s(btn.y),
           display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
-          pointerEvents:'auto', width:s(rCircleSize),
+          pointerEvents:'auto', width:s(136),
         }}>
-          <div onClick={() => {
-            if (btn.label === 'Культура' && onCultureSwitch) onCultureSwitch();
-          }} style={rCircle}>
-            <img src={btn.icon} alt="" style={{ width:s(rIconSize),height:s(rIconSize),objectFit:'contain' }} />
+          <div
+            onClick={() => { if (btn.label === 'Культура' && onCultureSwitch) onCultureSwitch(); }}
+            style={circleStyle(136)}
+          >
+            <img src={btn.icon} alt="" style={{ width:s(118),height:s(118),objectFit:'contain' }} />
           </div>
           <span style={labelStyle}>{btn.label}</span>
           {btn.label === 'Культура' && activeCulture && (
-            <img src={activeCulture === 'carrot'
-              ? '/assets/icons/ic_culture_carrot.png'
-              : '/assets/icons/ic_culture_appletree.png'}
-              alt="" style={{ width:s(56),height:s(56),objectFit:'contain' }} />
+            <img
+              src={activeCulture === 'carrot'
+                ? '/assets/icons/ic_culture_carrot.png'
+                : '/assets/icons/ic_culture_appletree.png'}
+              alt=""
+              style={{ width:s(56),height:s(56),objectFit:'contain' }}
+            />
           )}
         </div>
       ))}

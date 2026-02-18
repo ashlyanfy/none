@@ -19,7 +19,7 @@ export default function BottomSheet({ visible, onClose, title, children }: Props
         </div>
         {children}
       </div>
-      <style>{`@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}`}</style>
+      {/* slideUp keyframe is defined globally in index.css */}
     </div>
   );
 }

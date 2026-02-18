@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { s, vw } from '../utils/scale';
 import { useWalletStore } from '../store/walletStore';
-
-function fmt(n: number) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+import { fmt } from '../utils/constants';
 
 export default function HUD() {
   const coins = useWalletStore(s => s.coins);
