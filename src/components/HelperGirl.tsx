@@ -1,0 +1,14 @@
+import { s, vw } from '../utils/scale';
+interface Props { onTap: () => void; }
+export default function HelperGirl({ onTap }: Props) {
+  return (
+    <div onClick={onTap} style={{
+      position:'absolute', right:vw(5), top:s(960),
+      width:s(400), height:s(590), zIndex:25, cursor:'pointer',
+      display:'flex', alignItems:'center', justifyContent:'center',
+    }}>
+      <img src="/assets/characters/char_girl_idle_watering.png" alt="Помощница"
+        style={{ width:s(500),height:s(970),objectFit:'contain' }} />
+    </div>
+  );
+}
