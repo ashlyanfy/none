@@ -1,11 +1,11 @@
 import { s, vw } from '../utils/scale';
 
 const LEFT = [
-  { icon: '/assets/icons/ic_reward_visit.png', label: 'Награда', y: 200, },
-  { icon: '/assets/icons/ic_daily_challenge.png', label: 'Челлендж', y: 355,},
-  { icon: '/assets/icons/ic_household.png', label: 'Хозяйство', y: 510 },
-  { icon: '/assets/icons/ic_storage.png', label: 'Склад', y: 665 },
-  { icon: '/assets/icons/ic_invite_friend.png', label: 'Друзья', y: 820 },
+  { icon: '/assets/icons/ic_reward_visit.png', label: 'Награда', y: 200, offsetX: 0 },
+  { icon: '/assets/icons/ic_daily_challenge.png', label: 'Челлендж', y: 355, offsetX: -50 },
+  { icon: '/assets/icons/ic_household.png', label: 'Хозяйство', y: 510, offsetX: 0 },
+  { icon: '/assets/icons/ic_storage.png', label: 'Склад', y: 665, offsetX: 20 },
+  { icon: '/assets/icons/ic_invite_friend.png', label: 'Друзья', y: 820, offsetX: -30 },
 ];
 
 const RIGHT = [
@@ -19,7 +19,7 @@ interface Props { onCultureSwitch?: () => void; activeCulture?: 'carrot' | 'appl
 function circleStyle(size: number): React.CSSProperties {
   return {
     width: s(size), height: s(size), borderRadius: s(size / 2),
-    background: 'rgb(227, 215, 155)',
+    background: 'rgb(248, 241, 207)',
     boxShadow: `0 ${s(3)}px ${s(10)}px rgba(245, 198, 112, 0.13)`,
     display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
   };
@@ -42,7 +42,7 @@ export default function SideActions({ onCultureSwitch, activeCulture }: Props) {
           pointerEvents:'auto',
         }}>
           <div style={circleStyle(118)}>
-            <img src={btn.icon} alt="" style={{ width:s(125),height:s(125),objectFit:'contain' }} />
+            <img src={btn.icon} alt="" style={{ width:s(150),height:s(150),objectFit:'contain', marginLeft:s(btn.offsetX) }} />
           </div>
           <span style={labelStyle}>{btn.label}</span>
         </div>
