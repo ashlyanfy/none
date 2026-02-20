@@ -19,7 +19,6 @@ export default function BottomSheet({ visible, onClose, title, children }: Props
         </div>
         {children}
       </div>
-      {/* slideUp keyframe is defined globally in index.css */}
     </div>
   );
 }

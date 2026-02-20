@@ -7,7 +7,7 @@ export default function NutrientsBadge({ onTap }: Props) {
   const nutrients = useWalletStore(st => st.nutrients);
   return (
     <div onClick={onTap} style={{
-      position:'absolute', left:vw(3), bottom:getTabBarHeight() + s(120),
+      position:'absolute', left:vw(3), bottom:getTabBarHeight() + s(-20),
       width:s(200), zIndex:80, cursor:'pointer',
       display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
     }}>

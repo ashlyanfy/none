@@ -4,11 +4,11 @@ export default function HelperGirl({ onTap }: Props) {
   return (
     <div onClick={onTap} style={{
       position:'absolute', right:vw(10), top:s(760),
-      width:s(400), height:s(590), zIndex:25, cursor:'pointer',
+      width:s(500), height:s(590), zIndex:25, cursor:'pointer',
       display:'flex', alignItems:'center', justifyContent:'center',
     }}>
       <img src="/assets/characters/char_girl_idle_watering.png" alt="Помощница"
-        style={{ width:s(500),height:s(970),objectFit:'contain' }} />
+        style={{ width:s(600),height:s(970),objectFit:'contain' }} />
     </div>
   );
 }

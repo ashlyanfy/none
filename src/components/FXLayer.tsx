@@ -8,7 +8,6 @@ export default function FXLayer({ stageFX, triggerFX, onTriggerDone, soilAnchorX
   useEffect(() => { if(triggerFX!=='none'){setShow(true);const t=setTimeout(()=>{setShow(false);onTriggerDone?.()},800);return()=>clearTimeout(t)} }, [triggerFX]);
   const sz=300, cx=soilAnchorX-sz/2, cy=soilAnchorY-sz-80;
   const base=(op:number):React.CSSProperties=>({position:'absolute',left:s(cx),top:s(cy),width:s(sz),height:s(sz),objectFit:'contain',zIndex:30,opacity:op,pointerEvents:'none',transition:'opacity 0.5s ease'});
-  // Keyframes fxP and fxB are defined globally in index.css
   return <>
     {stageFX!=='none'&&ASSETS[stageFX]&&<img src={ASSETS[stageFX]} alt="" style={{...base(0.6),animation:'fxP 2s ease-in-out infinite'}}/>}
     {show&&triggerFX!=='none'&&ASSETS[triggerFX]&&<img src={ASSETS[triggerFX]} alt="" style={{...base(1),animation:'fxB 0.8s ease-out forwards'}}/>}

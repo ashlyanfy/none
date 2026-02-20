@@ -12,19 +12,19 @@ export default function WaterIndicator({ amount, tab }: Props) {
   const display = fmt(amount) + ' г';
   return (
     <div style={{
-      position:'absolute', left:'50%', top:s(180), transform:'translateX(-50%)',
-      width:'auto', height:s(100),
-      zIndex:40, display:'flex', alignItems:'center', gap:s(10),
+      position:'absolute', left:'50%', top:s(230), transform:'translateX(-50%)',
+      width:'auto', height:s(200),
+      zIndex:40, display:'flex', alignItems:'center',
     }}>
       <div style={{ position:'relative', flexShrink:0 }}>
-        <img src="/assets/ui/ui_water_bottle_round.PNG" alt=""
-          style={{ width:s(100),height:s(100),objectFit:'contain' }} />
+        <img src="/assets/ui/ui_water_bottle_round.png" alt=""
+          style={{ width:s(200),height:s(160),objectFit:'contain' }} />
         {ovr && <img src={ovr} alt="" style={{
-          position:'absolute',top:0,right:0,width:s(32),height:s(32),objectFit:'contain',
+          position:'absolute',top:0,right:0,width:s(0),height:s(0),objectFit:'contain',
         }} />}
       </div>
       <span style={{
-        fontSize:s(38),fontWeight:800,color:'#FFF',fontFamily:'Nunito',
+        fontSize:s(48),fontWeight:900,color:'#271717',fontFamily:'Nunito',
         textShadow:`${s(2)}px ${s(2)}px ${s(4)}px rgba(0,0,0,0.3)`,whiteSpace:'nowrap',
       }}>{display}</span>
     </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { s, vw } from '../utils/scale';
 import { useWalletStore } from '../store/walletStore';
 import { fmt } from '../utils/constants';
@@ -6,7 +6,20 @@ import { fmt } from '../utils/constants';
 export default function HUD() {
   const coins = useWalletStore(s => s.coins);
   const goodness = useWalletStore(s => s.goodness);
-  const [soundOn, setSoundOn] = useState(true);
+  const [soundOn, setSoundOn] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleSound = () => {
+    if (audioRef.current) {
+      if (soundOn) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.volume = 0.5;
+        audioRef.current.play().catch(() => {});
+      }
+      setSoundOn(!soundOn);
+    }
+  };
 
   const cap = (left: number, w: number): React.CSSProperties => ({
     position: 'absolute', left: vw(left / 10.8), top: s(24),
@@ -17,6 +30,9 @@ export default function HUD() {
 
   return (
     <div style={{ position:'absolute',top:0,left:0,width:'100%',height:'100%',zIndex:60,pointerEvents:'none' }}>
+      <audio ref={audioRef} loop>
+        <source src="/farm-music.mp3" type="audio/mpeg" />
+      </audio>
       <div style={{ ...cap(32, 340), pointerEvents: 'auto' }}>
         <img src="/assets/icons/ic_coin.png" alt="" style={{ width:s(200),height:s(200),objectFit:'contain', marginLeft:s(-70) }} />
         <div>
@@ -31,7 +47,7 @@ export default function HUD() {
           <div style={{ fontSize:s(35),fontWeight:800,color:'rgba(81, 42, 12, 0.7)',fontFamily:'Nunito' }}>добро</div>
         </div>
       </div>
-      <div onClick={()=>setSoundOn(!soundOn)} style={{
+      <div onClick={toggleSound} style={{
         position:'absolute',right:vw(3),top:s(24),width:s(144),height:s(144),borderRadius:s(72),
         background:'rgb(227, 215, 155)',backdropFilter:'blur(10px)',
         display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',pointerEvents:'auto',

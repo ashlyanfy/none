@@ -12,9 +12,9 @@ export const HARVEST_WEIGHT = { carrot: 10_000, apple: 12_000, trout: 8_000, hon
 export const INITIAL_RESOURCES = { coins: 500, water_g: 1000, oxygen_g: 1000, syrup_g: 1000, nutrients: 5 } as const;
 export type TabId = 'farm' | 'fish' | 'bee' | 'market' | 'profile';
 export const TABS: { id: TabId; label: string; icon: string }[] = [
-  { id: 'farm', label: 'Ферма', icon: '/assets/ui/ic_tab_farm_ref.PNG' },
-  { id: 'fish', label: 'Рыба', icon: '/assets/ui/ic_tab_fish_ref.PNG' },
-  { id: 'bee', label: 'Ульи', icon: '/assets/ui/ic_tab_bee_ref.PNG' },
-  { id: 'market', label: 'Рынок', icon: '/assets/ui/ic_tab_market_ref.PNG' },
-  { id: 'profile', label: 'Профиль', icon: '/assets/ui/ic_tab_profile_ref.PNG' },
+  { id: 'farm', label: 'Ферма', icon: '/assets/ui/ic_tab_farm_ref.png' },
+  { id: 'fish', label: 'Рыба', icon: '/assets/ui/ic_tab_fish_ref.png' },
+  { id: 'bee', label: 'Ульи', icon: '/assets/ui/ic_tab_bee_ref.png' },
+  { id: 'market', label: 'Рынок', icon: '/assets/ui/ic_tab_market_ref.png' },
+  { id: 'profile', label: 'Профиль', icon: '/assets/ui/ic_tab_profile_ref.png' },
 ];

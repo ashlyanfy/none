@@ -4,7 +4,6 @@ interface Props {
   tab: 'farm'|'fish'|'bee'; isReady: boolean; daysLeft: number; percent: number;
   canAct: boolean; onCare: () => void; onHarvest: () => void;
 }
-
 const LABELS: Record<string,string> = {
   farm: '5 раз полить', fish: '5 раз O₂', bee: '5 раз сироп',
 };
@@ -16,7 +15,7 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
       <div style={{
         position:'absolute', left:'50%', bottom:getTabBarHeight() + s(24),
         transform:'translateX(-50%)',
-        minWidth:vw(80), maxWidth:vw(80), height:s(100), borderRadius:s(50),
+        minWidth:vw(50), maxWidth:vw(80), height:s(100), borderRadius:s(50),
         pointerEvents:'auto',
         background:'rgba(255,243,224,0.97)',
         boxShadow:`0 ${s(4)}px ${s(12)}px rgba(0,0,0,0.15)`,
@@ -32,17 +31,15 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
           </div>
         )}
       </div>
-
-      {/* Блок с лейкой */}
       {!isReady && (
         <div onClick={onCare} style={{
-          position:'absolute', right:vw(3), bottom:getTabBarHeight() + s(120),
+          position:'absolute', right:vw(3), bottom:getTabBarHeight() + s(-20),
           width:s(200), cursor:canAct?'pointer':'not-allowed',
           pointerEvents:'auto', opacity:canAct?1:0.5,
           display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
         }}>
           <div style={{ width:s(280), height:s(280) }}>
-            <img src="/assets/ui/ui_funnel.PNG" alt=""
+            <img src="/assets/ui/ui_funnel.png" alt=""
               style={{ width:'100%', height:'100%', objectFit:'contain' }} />
           </div>
           <span style={{
@@ -51,8 +48,6 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
           }}>{LABELS[tab]}</span>
         </div>
       )}
-
-      {/* Кнопка сбора */}
       {isReady && (
         <button onClick={onHarvest} style={{
           position:'absolute', right:vw(3), bottom:getTabBarHeight() + s(120),
@@ -63,7 +58,7 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
           display:'flex', alignItems:'center', justifyContent:'center',
         }}>
           <span style={{
-            fontSize:s(32),fontWeight:800,color:'#FFF',fontFamily:'Nunito',
+            fontSize:s(42),fontWeight:800,color:'#FFF',fontFamily:'Nunito',
             textShadow:'1px 1px 2px rgba(0,0,0,0.2)',
           }}>🎁 Собрать</span>
         </button>
