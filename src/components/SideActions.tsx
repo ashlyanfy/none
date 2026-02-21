@@ -1,16 +1,16 @@
 import { s, vw } from '../utils/scale';
 
 const LEFT = [
-  { icon: '/assets/icons/ic_reward_visit.png', label: 'Награда', y: 200, offsetX: 0 },
-  { icon: '/assets/icons/ic_daily_challenge.png', label: 'Челлендж', y: 355, offsetX: -50 },
-  { icon: '/assets/icons/ic_household.png', label: 'Хозяйство', y: 510, offsetX: 0 },
-  { icon: '/assets/icons/ic_storage.png', label: 'Склад', y: 665, offsetX: 20 },
-  { icon: '/assets/icons/ic_invite_friend.png', label: 'Друзья', y: 820, offsetX: -30 },
+  { icon: '/assets/icons/ic_reward_visit.webp', label: 'Награда', y: 200, offsetX: 0 },
+  { icon: '/assets/icons/ic_daily_challenge.webp', label: 'Челлендж', y: 355, offsetX: -50 },
+  { icon: '/assets/icons/ic_household.webp', label: 'Хозяйство', y: 510, offsetX: 0 },
+  { icon: '/assets/icons/ic_storage.webp', label: 'Склад', y: 665, offsetX: 20 },
+  { icon: '/assets/icons/ic_invite_friend.webp', label: 'Друзья', y: 820, offsetX: -30 },
 ];
 
 const RIGHT = [
-  { icon: '/assets/icons/ic_hot_deal.png', label: 'Горячее', y: 210 },
-  { icon: '/assets/icons/ic_change_culture.png', label: 'Культура', y: 415 },
+  { icon: '/assets/icons/ic_hot_deal.webp', label: 'Горячее', y: 210 },
+  { icon: '/assets/icons/ic_change_culture.webp', label: 'Культура', y: 415 },
 ];
 
 interface Props { onCultureSwitch?: () => void; activeCulture?: 'carrot' | 'apple'; }
@@ -64,8 +64,8 @@ export default function SideActions({ onCultureSwitch, activeCulture }: Props) {
           {btn.label === 'Культура' && activeCulture && (
             <img
               src={activeCulture === 'carrot'
-                ? '/assets/icons/ic_culture_carrot.png'
-                : '/assets/icons/ic_culture_appletree.png'}
+                ? '/assets/icons/ic_culture_carrot.webp'
+                : '/assets/icons/ic_culture_appletree.webp'}
               alt=""
               style={{ width:s(76),height:s(76),objectFit:'contain' }}
             />

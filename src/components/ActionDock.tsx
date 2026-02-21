@@ -39,7 +39,7 @@ export default function ActionDock({ tab, isReady, daysLeft, percent, canAct, on
           display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
         }}>
           <div style={{ width:s(280), height:s(280) }}>
-            <img src="/assets/ui/ui_funnel.png" alt=""
+            <img src="/assets/ui/ui_funnel.webp" alt=""
               style={{ width:'100%', height:'100%', objectFit:'contain' }} />
           </div>
           <span style={{

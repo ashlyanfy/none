@@ -12,7 +12,7 @@ export default function BeeScreen() {
   const addItem = useInventoryStore(s=>s.addItem);
   const prog = calculateProgress(bee);
   return <GameScene
-    config={{ tab:'bee', bgSrc:'/assets/backgrounds/bg_bee_apiary_day.png', groundSrc:'/assets/grounds/ground_bee_apiary_grass_patch.png', groundX:144, groundY:getGroundY(), objectType:'bee', label:'Это пасека', careFX:'pollen', stageFXType:'pollen' }}
+    config={{ tab:'bee', bgSrc:'/assets/backgrounds/bg_bee_apiary_day.webp', groundSrc:'/assets/grounds/ground_bee_apiary_grass_patch.webp', groundX:144, groundY:getGroundY(), objectType:'bee', label:'Это пасека', careFX:'pollen', stageFXType:'pollen' }}
     data={{ prog, resourceAmount:wallet.resources.syrup_g, canCare:wallet.resources.syrup_g>=CARE_COST.syrup_g, nutrients:wallet.nutrients, coins:wallet.coins, careIndex:bee.careIndex, nutrientsUsed:bee.nutrientsUsed, goodnessToday:wallet.goodness.todayCount }}
     actions={{
       onCare:()=>{ if(wallet.spendResource('syrup_g',CARE_COST.syrup_g)){bee.addCare();wallet.addGoodness('careAction')} },

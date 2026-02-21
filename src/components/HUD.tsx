@@ -34,14 +34,14 @@ export default function HUD() {
         <source src="/farm-music.mp3" type="audio/mpeg" />
       </audio>
       <div style={{ ...cap(32, 340), pointerEvents: 'auto' }}>
-        <img src="/assets/icons/ic_coin.png" alt="" style={{ width:s(200),height:s(200),objectFit:'contain', marginLeft:s(-70) }} />
+        <img src="/assets/icons/ic_coin.webp" alt="" style={{ width:s(200),height:s(200),objectFit:'contain', marginLeft:s(-70) }} />
         <div>
           <div style={{ fontSize:s(42),fontWeight:900,color:'#2b1807',fontFamily:'Nunito',lineHeight:1 }}>{fmt(coins)}</div>
           <div style={{ fontSize:s(35),fontWeight:800,color:'rgba(81, 42, 12, 0.7)',fontFamily:'Nunito' }}>монеты</div>
         </div>
       </div>
       <div style={{ ...cap(370, 340), pointerEvents: 'auto', cursor: 'pointer' }}>
-        <img src="/assets/icons/ic_goodness.png" alt="" style={{ width:s(150),height:s(150),objectFit:'contain',}} />
+        <img src="/assets/icons/ic_goodness.webp" alt="" style={{ width:s(150),height:s(150),objectFit:'contain',}} />
         <div>
           <div style={{ fontSize:s(42),fontWeight:900,color:'#2b1807',fontFamily:'Nunito',lineHeight:1 }}>{goodness.value}/{goodness.goal}</div>
           <div style={{ fontSize:s(35),fontWeight:800,color:'rgba(81, 42, 12, 0.7)',fontFamily:'Nunito' }}>добро</div>
@@ -54,8 +54,8 @@ export default function HUD() {
       }}>
 
         {soundOn
-  ? <img src="/assets/icons/ic_sound_on.png"  style={{ width:s(200), height:s(200), objectFit:'contain', marginTop:s(40) }} />
-  : <img src="/assets/icons/ic_sound_off.png" style={{ width:s(200), height:s(200), objectFit:'contain', marginTop:s(40), marginLeft:s(60), }} />
+  ? <img src="/assets/icons/ic_sound_on.webp"  style={{ width:s(200), height:s(200), objectFit:'contain', marginTop:s(40) }} />
+  : <img src="/assets/icons/ic_sound_off.webp" style={{ width:s(200), height:s(200), objectFit:'contain', marginTop:s(40), marginLeft:s(60), }} />
 }
       </div>
     </div>

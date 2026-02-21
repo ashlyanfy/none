@@ -12,7 +12,7 @@ export default function NutrientsBadge({ onTap }: Props) {
       display:'flex', flexDirection:'column', alignItems:'center', gap:s(6),
     }}>
       <div style={{ position:'relative', width:s(280), height:s(280) }}>
-        <img src="/assets/ui/ui_nutrients.PNG" alt=""
+        <img src="/assets/ui/ui_nutrients.webp" alt=""
           style={{ width:'100%', height:'100%', objectFit:'contain' }} />
         <span style={{
           position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)',

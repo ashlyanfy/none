@@ -9,7 +9,7 @@ export default function TabBar({ activeTab, onTabChange }: Props) {
     <div style={{
       position: 'absolute', bottom: 0, left: 0, width: '100%',
       height: getTabBarHeight(), zIndex: 100,
-      backgroundImage: 'url(/assets/ui/ui_tabbar_wood_bg.png)',
+      backgroundImage: 'url(/assets/ui/ui_tabbar_wood_bg.webp)',
       backgroundSize: '100% 100%',
       display: 'flex', alignItems: 'flex-end', justifyContent: 'space-around',
       paddingBottom: s(40), paddingLeft: vw(2), paddingRight: vw(2),

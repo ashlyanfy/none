@@ -12,7 +12,7 @@ export default function FishScreen() {
   const addItem = useInventoryStore(s=>s.addItem);
   const prog = calculateProgress(fish);
   return <GameScene
-    config={{ tab:'fish', bgSrc:'/assets/backgrounds/bg_fish_nature_pond_day.png', groundSrc:'/assets/grounds/ground_fish_pond_shore_patch.png', groundX:144, groundY:getGroundY(), objectType:'trout', label:'Это форель', careFX:'bubbles', stageFXType:'bubbles' }}
+    config={{ tab:'fish', bgSrc:'/assets/backgrounds/bg_fish_nature_pond_day.webp', groundSrc:'/assets/grounds/ground_fish_pond_shore_patch.webp', groundX:144, groundY:getGroundY(), objectType:'trout', label:'Это форель', careFX:'bubbles', stageFXType:'bubbles' }}
     data={{ prog, resourceAmount:wallet.resources.oxygen_g, canCare:wallet.resources.oxygen_g>=CARE_COST.oxygen_g, nutrients:wallet.nutrients, coins:wallet.coins, careIndex:fish.careIndex, nutrientsUsed:fish.nutrientsUsed, goodnessToday:wallet.goodness.todayCount }}
     actions={{
       onCare:()=>{ if(wallet.spendResource('oxygen_g',CARE_COST.oxygen_g)){fish.addCare();wallet.addGoodness('careAction')} },

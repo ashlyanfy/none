@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-
+devOptions: {
+  enabled: false
+}
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
       registerType: 'prompt',
-      includeAssets: ['icons/icon-192.png', 'icons/icon-512.png'],
+      includeAssets: ['assets/icons/icon-192.webp', 'assets/icons/icon-512.webp'],
       manifest: {
         name: 'Моя Ферма',
         short_name: 'Ферма',
@@ -17,14 +19,14 @@ export default defineConfig({
         theme_color: '#6b4e2e',
         icons: [
           {
-            src: '/icons/icon-192.png',
+            src: '/assets/icons/icon-192.webp',
             sizes: '192x192',
-            type: 'image/png',
+            type: 'image/webp',
           },
           {
-            src: '/icons/icon-512.png',
+            src: '/assets/icons/icon-512.webp',
             sizes: '512x512',
-            type: 'image/png',
+            type: 'image/webp',
           },
         ],
       },

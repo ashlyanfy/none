@@ -7,8 +7,8 @@ import GameScene from '../components/GameScene';
 import { getGroundY } from '../utils/scale';
 
 const CFG = {
-  carrot: { bg:'/assets/backgrounds/bg_farm_carrot_day.png', ground:'/assets/grounds/ground_farm_soil_patch.png', gx:144, label:'Это морковь', anchorOffsetY:0 },
-  apple:  { bg:'/assets/backgrounds/bg_farm_apple_orchard_day.png', ground:'/assets/grounds/ground_orchard_soil_patch.png', gx:151, label:'Это яблоня', anchorOffsetY:820 },
+  carrot: { bg:'/assets/backgrounds/bg_farm_carrot_day.webp', ground:'/assets/grounds/ground_farm_soil_patch.webp', gx:144, label:'Это морковь', anchorOffsetY:0 },
+  apple:  { bg:'/assets/backgrounds/bg_farm_apple_orchard_day.webp', ground:'/assets/grounds/ground_orchard_soil_patch.webp', gx:151, label:'Это яблоня', anchorOffsetY:820 },
 };
 
 export default function FarmScreen() {

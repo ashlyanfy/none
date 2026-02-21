@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { s } from '../utils/scale';
 type FXType = 'water'|'bubbles'|'pollen'|'sparkle'|'glow'|'none';
 interface Props { stageFX:FXType; triggerFX:FXType; onTriggerDone?:()=>void; soilAnchorX?:number; soilAnchorY?:number; }
-const ASSETS:Record<string,string>={water:'/assets/fx/fx_water_drops.png',bubbles:'/assets/fx/fx_bubbles.png',pollen:'/assets/fx/fx_pollen.png',sparkle:'/assets/fx/fx_sparkle.png',glow:'/assets/fx/fx_glow_ring.png'};
+const ASSETS:Record<string,string>={water:'/assets/fx/fx_water_drops.webp',bubbles:'/assets/fx/fx_bubbles.webp',pollen:'/assets/fx/fx_pollen.webp',sparkle:'/assets/fx/fx_sparkle.webp',glow:'/assets/fx/fx_glow_ring.webp'};
 export default function FXLayer({ stageFX, triggerFX, onTriggerDone, soilAnchorX=540, soilAnchorY=1550 }: Props) {
   const [show, setShow] = useState(false);
   useEffect(() => { if(triggerFX!=='none'){setShow(true);const t=setTimeout(()=>{setShow(false);onTriggerDone?.()},800);return()=>clearTimeout(t)} }, [triggerFX]);

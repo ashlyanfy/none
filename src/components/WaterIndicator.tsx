@@ -17,7 +17,7 @@ export default function WaterIndicator({ amount, tab }: Props) {
       zIndex:40, display:'flex', alignItems:'center',
     }}>
       <div style={{ position:'relative', flexShrink:0 }}>
-        <img src="/assets/ui/ui_water_bottle_round.png" alt=""
+        <img src="/assets/ui/ui_water_bottle_round.webp" alt=""
           style={{ width:s(200),height:s(160),objectFit:'contain' }} />
         {ovr && <img src={ovr} alt="" style={{
           position:'absolute',top:0,right:0,width:s(0),height:s(0),objectFit:'contain',
